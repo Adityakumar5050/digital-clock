@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <!-- <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" /> -->
+    <style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "sans";
+      }
+      
+      @font-face {
+        src: url("font/sans.ttf");
+        font-family: "sans";
+      }
+      
+      .heading {
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        padding: 100px;
+      }
+      
+      section {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: #19172e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .clock {
+        position: relative;
+        width: 450px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+      }
+      
+      .clock .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      
+      .clock .container h2 {
+        font-size: 3.5rem;
+        color: #fff;
+      }
+      
+      .clock .container h2:nth-child(odd) {
+        padding: 5px 10px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+      }
+      
+      #ampm {
+        position: relative;
+        top: 30px;
+        font-size: 1rem;
+        color: #fff;
+        font-weight: 700;
+      }
+      
+        </style>
+   
+  </head>
+  <body>
+    <section>
+      <h3 class="heading">Digital Clock</h3>
+      <div class="clock">
+        <div class="container">
+          <h2 id="hour">00</h2>
+          <h2 class="dot">:</h2>
+          <h2 id="minute">00</h2>
+          <h2 class="dot">:</h2>
+          <h2 id="seconds">00</h2>
+          <span id="ampm">AM</span>
+        </div>
+      </div>
+    </section>
+   
+
+      <script>
+      function clock(){
+    
+        let hour = document.getElementById('hour');
+        let minute = document.getElementById('minute');
+        let seconds = document.getElementById('seconds');
+        let ampm = document.getElementById('ampm');
+        
+        let h = new Date().getHours();
+        let m = new Date().getMinutes();
+        let s = new Date().getSeconds();
+        var am = 'AM' ;
+    
+        // Conver 24 hour time to 12 hour format with AM/PM Indicator
+        if (h > 12){
+            h = h - 12;
+            var am = 'PM' 
+        }
+    
+        // Add 0 to the begining of number if less than 10
+        h = ( h < 10 ) ? '0' + h : h ;
+        m = ( m < 10 ) ? '0' + m : m ;
+        s = ( s < 10 ) ? '0' + s : s ;
+    
+        hour.innerHTML = h;
+        minute.innerHTML = m;
+        seconds.innerHTML = s;
+        ampm.innerHTML = am;
+    }
+    
+    var interval = setInterval(clock, 1000);
+    </script>
+  </body>
+</html>

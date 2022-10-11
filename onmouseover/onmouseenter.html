@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style> 
+body{
+    display: flex;
+    justify-content: center;
+    background-color: aqua ;
+}
+
+    #img{
+        width: 400px;
+        height: 400px;
+        margin: 50px 0 0 0px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 5px 15px 10px red;
+        border-radius: 20px;
+    } 
+    #hide{
+        width: 140px;
+        height: 20px;
+        margin: 474px 0 0 50px;
+                                               
+      
+     }
+    #show{
+        width: 140px;
+        height: 20px;
+        margin-top: 474px;
+        margin-left: 10px;
+    }
+    #text{
+        width: 300px;
+        height: 20px;
+        margin-top: 474px;
+        color: brown;
+        text-align: center;
+        justify-content: center;
+        margin-right: 20px;
+    }
+    button{
+        background-color: rgb(13, 66, 238);
+        border-radius: 10px;
+        box-shadow:0 5px 15px 10px red; ;
+
+        
+    }
+    #container{
+        justify-content: center;
+        text-align: center;
+    }
+
+
+
+    </style>
+<head>
+       <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <button id="hide">Hide this image</button>
+</div>
+    
+<div id="container-col">
+    <img id ='img' src="certificate.jpg">
+</div>
+    <br>
+    <div id="container-class">
+        <button id='show'>show this image</button>
+    </div>
+    <h1 id="text"> Radhe radhe </h1>
+    
+
+    <script type="text/javascript">
+      
+        let image = document.getElementById('img')
+        let hide = document.getElementById('hide')
+        let show = document.getElementById('show')
+        let text = document.getElementById('text')
+
+        show.onclick=function(){
+            image.style.display='inline'//block
+        }
+         hide.onclick=function(){
+             image.style.display='none'//
+         }
+       text.onmouseenter=function(){
+        text.innerHTML='Radhe Radhe!'
+       }
+       text.onmouseout=function(){
+        text.innerHTML='Jai Shree Krishna'
+       }
+           
+        
+
+    </script>
+</body>
+</html>

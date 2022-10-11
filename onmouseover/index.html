@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting</title>
+    <style>
+        body{
+            background-color: teal;
+        }
+        #head{
+            text-align: center;
+        }
+        #data{
+            text-align: center;
+        }
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .btn{
+            margin-left: 20px;
+            background-color: red;
+            border: none;
+            border-radius: 10px;
+            height: 30px;
+            margin-top: 50px;
+
+        }
+        .btn:hover{
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            /* padding: 5px; */
+            height: 30px;
+        }
+        #h{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head">JavaScript Array Sort Methods</h1>
+    <div id="container">
+        <!-- <input type="text"  name="" id="data" placeholder="enter arrays value">
+        
+    
+       -->
+       <input type="text" id="data">
+        
+    </div>
+    <div id="btn">
+        <button class="btn"onclick="Asc()">Use For Ascending Sort</button>
+        <button class="btn"onclick="Dsc()">USe Fro Decending Sort</button>
+    </div>
+    <br>
+    <h1 id="h"></h1>
+    <!-- <h1 id="display"></h1> -->
+    
+</body>
+</html>
+<script>
+
+    
+    // var arr =[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+    var data = document.getElementById("data").value 
+    // console.log(data)
+    // console.log(typeof(data))
+    
+    var arr = data.split(",")
+    console.log(arr)
+
+  
+
+
+function Asc(){
+    // window.location.reload()
+    
+    var Sort= arr.sort(function(a,b){
+    
+    return(a-b)
+    
+})
+// console.log(Sort)
+    document.getElementById("h").innerHTML="Array sort in Ascending order"+" "+Sort
+  
+}
+
+
+function Dsc(){
+    // window.location.reload()
+    
+    var Sort=arr.sort(function(a,b){
+    
+    return(b-a)
+    
+})
+// console.log(Sort)
+    document.getElementById("h").innerHTML="Array sort in Decending order"+" "+Sort
+  
+}
+    
+    
+    
+   
+
+
+
+// console.log(Sort)
+
+// document.querySelector("#display").innerHTML= arr;
+</script>
